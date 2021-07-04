@@ -35,6 +35,9 @@ workHrsCalculation $hrs $wagePerHr
 hrsCalc=$?
 echo "Hrs calculated = $hrsCalc"
 echo "Daily Salary:"
-echo "${dailySalary[@]}"
+for day in ${!dailySalary[@]}
+do
+	echo $(($day+1)) $((dailySalary[$day]))
+done
 salary=$(($wagePerHr*$hrsCalc))
 echo "Total Salary = $salary"
