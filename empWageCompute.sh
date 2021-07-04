@@ -1,18 +1,22 @@
 #!/bin/bash -x
 echo "Welcome to Employee Wage Computation Program"
-empPresent=$((RANDOM%3))
 wagePerHr=20
-case $empPresent in
-	2) echo "Employee Present"
-	   hrsCalculated=8
-		;;
-	1) echo "Employee Part-Time"
-	   hrsClaculated=8
-		;;
-	0) echo "Employee Absent"
-	   hrsCalculated=0
-		;;
-esac
+hrsCalculated=0
+for((day=1;day<=20;day++))
+do
+	empPresent=$((RANDOM%3))
+	case $empPresent in
+		2) #echo "Employee Present"
+		   ((hrsCalculated+=8))
+			;;
+		1) #echo "Employee Part-Time"
+		   ((hrsClaculated+=8))
+			;;
+		0) #echo "Employee Absent"
+		   ((hrsCalculated+=0))
+			;;
+	esac
+done
 #if [ $empPresent -eq 2 ]
 #then
 #	echo "Employee Present"
