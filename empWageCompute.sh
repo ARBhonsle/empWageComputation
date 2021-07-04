@@ -1,10 +1,14 @@
 #!/bin/bash -x
 echo "Welcome to Employee Wage Computation Program"
-empPresent=$((RANDOM%2))
+empPresent=$((RANDOM%3))
 wagePerHr=20
-if [ $empPresent -eq 1 ]
+if [ $empPresent -eq 2 ]
 then
 	echo "Employee Present"
+	HrsCalculated=8
+elif [ $empPresent -eq 1 ]
+then
+	echo "Employee Part-time"
 	HrsCalculated=8
 else
 	echo "Employee Absent"
