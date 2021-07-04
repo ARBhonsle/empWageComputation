@@ -1,8 +1,9 @@
 #!/bin/bash -x
 echo "Welcome to Employee Wage Computation Program"
 wagePerHr=20
+totWorkingHr=100
 hrsCalculated=0
-for((day=1;day<=20;day++))
+for((day=1;day<=20 && $hrsCalculated<$totWorkingHr;day++))
 do
 	empPresent=$((RANDOM%3))
 	case $empPresent in
@@ -30,5 +31,6 @@ done
 #	HrsCalculated=0
 #fi
 salary=$(($wagePerHr*$hrsCalculated))
-echo "Wage per Hr = $wagePerHr, Hrs calculated = $hrsCalculated"
+echo "Wage per Hr = $wagePerHr"
+echo "Days worked=$(($day-1)), Hrs calculated = $hrsCalculated"
 echo "Salary = $salary"
